@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 
 app.get('/tracking-pixel', (req, res) => {
-    const pixelPath = path.join('C:', 'Users', 'Jatin Lalit', 'Desktop', 'Email Styler Pro', 'Traking pixel function', 'test.png');
+    const pixelPath = path.join('/test.png');
     
     const userEmail = req.query.email || 'unknown email';
     
