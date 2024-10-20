@@ -20,7 +20,7 @@ app.get('/tracking-pixel', (req, res) => {
         ipAddress: ip,
         userAgent: userAgent,
         timestamp: timestamp,
-        headers: req.headers
+        // headers: req.headers
     });
 
     // Serve the tracking pixel image
