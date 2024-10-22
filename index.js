@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-
+app.set('trust proxy', true);
 app.get('/tracking-pixel', (req, res) => {
     console.log("here is request",req)
     const pixelPath = path.join('/test.png');
@@ -10,7 +10,7 @@ app.get('/tracking-pixel', (req, res) => {
     const userEmail = req.query.email || 'unknown email';
     
     // Retrieve additional data
-    const ip = req.socket.remoteAddress; // Get IP address
+    const ip = req.ip; // Get IP address
     const userAgent = req.headers['user-agent']; // Get User-Agent (browser and device info)
     const timestamp = new Date(); // Get current timestamp
 
