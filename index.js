@@ -4,7 +4,6 @@ const path = require('path');
 const app = express();
 app.set('trust proxy', true);
 app.get('/tracking-pixel', (req, res) => {
-    console.log("here is request",req)
     const pixelPath = path.join('/test.png');
     
     const userEmail = req.query.email || 'unknown email';
